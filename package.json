@@ -1,0 +1,26 @@
+{
+  "name": "caspar-bridge-service",
+  "version": "1.0.0",
+  "description": "Localhost bridge that receives commands from an online page and forwards them to CasparCG.",
+  "main": "src/server.js",
+  "bin": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "build:exe": "pkg package.json --targets node18-win-x64 --output build/CasparBridgeService.exe",
+    "download:winsw": "powershell -ExecutionPolicy Bypass -File scripts/download-winsw.ps1",
+    "build:installer": "powershell -ExecutionPolicy Bypass -File scripts/build-installer.ps1"
+  },
+  "pkg": {
+    "assets": [
+      ".env.example"
+    ]
+  },
+  "dependencies": {
+    "casparcg-connection": "^5.1.0",
+    "dotenv": "^16.4.5",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1"
+  }
+}

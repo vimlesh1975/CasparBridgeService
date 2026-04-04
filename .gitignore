@@ -1,0 +1,8 @@
+node_modules/
+build/
+vendor/winsw/WinSW-x64.exe
+bridge.log
+server-out.log
+server-err.log
+*.log
+.env

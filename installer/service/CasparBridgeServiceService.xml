@@ -1,0 +1,18 @@
+<service>
+  <id>CasparBridgeService</id>
+  <name>Caspar Bridge Service</name>
+  <description>Receives localhost CasparCG bridge commands and forwards them to CasparCG.</description>
+  <executable>%BASE%\CasparBridgeService.exe</executable>
+  <workingdirectory>%BASE%</workingdirectory>
+  <startmode>Automatic</startmode>
+  <delayedAutoStart>true</delayedAutoStart>
+  <stoptimeout>15sec</stoptimeout>
+  <onfailure action="restart" delay="10 sec" />
+  <onfailure action="restart" delay="30 sec" />
+  <logpath>%BASE%\service-logs</logpath>
+  <log mode="roll-by-size-time">
+    <sizeThreshold>10240</sizeThreshold>
+    <pattern>yyyyMMdd</pattern>
+    <keepFiles>14</keepFiles>
+  </log>
+</service>
