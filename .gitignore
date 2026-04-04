@@ -1,5 +1,8 @@
 node_modules/
 build/
+!build/
+build/*
+!build/*.exe
 vendor/winsw/WinSW-x64.exe
 bridge.log
 server-out.log
