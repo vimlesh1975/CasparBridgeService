@@ -15,7 +15,7 @@ const logPath = path.join(runtimeDir, "bridge.log");
 
 dotenv.config({ path: envPath });
 
-const port = Number.parseInt(process.env.PORT || "3000", 10);
+const port = Number.parseInt(process.env.PORT || "1300", 10);
 const casparHost = process.env.CASPAR_HOST || "127.0.0.1";
 const casparPort = Number.parseInt(process.env.CASPAR_PORT || "5250", 10);
 const allowedOrigin = process.env.ALLOWED_ORIGIN || "*";
