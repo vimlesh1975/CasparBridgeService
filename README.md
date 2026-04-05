@@ -2,7 +2,7 @@
 
 This project creates a small Windows bridge app that:
 
-- runs locally on `http://127.0.0.1:1300`
+- runs locally on `http://localhost:13000`
 - accepts HTTP requests from your online web page
 - forwards AMCP commands to CasparCG
 
@@ -15,7 +15,7 @@ The installed Windows machine does not need Node.js. The installer is intended t
 Example request:
 
 ```bash
-curl -X POST http://127.0.0.1:1300/api/casparcg ^
+curl -X POST http://localhost:13000/api/casparcg ^
   -H "Content-Type: application/json" ^
   -d "{\"action\":\"endpoint\",\"command\":\"PLAY 1-1 AMB\"}"
 ```
@@ -52,8 +52,8 @@ The bridge writes request and error logs to `bridge.log` beside the EXE.
 Copy `.env.example` to `.env` and adjust values:
 
 ```env
-PORT=1300
-CASPAR_HOST=127.0.0.1
+PORT=13000
+CASPAR_HOST=localhost
 CASPAR_PORT=5250
 ALLOWED_ORIGIN=*
 API_TOKEN=
@@ -118,7 +118,7 @@ The installer:
 Example browser request:
 
 ```js
-await fetch("http://127.0.0.1:1300/api/casparcg", {
+await fetch("http://localhost:13000/api/casparcg", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
