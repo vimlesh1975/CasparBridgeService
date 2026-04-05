@@ -218,7 +218,7 @@ async function handleCommand(req, res) {
 }
 
 const server = http.createServer(async (req, res) => {
-  const url = new URL(req.url || "/", `http://${req.headers.host || `127.0.0.1:${port}`}`);
+  const url = new URL(req.url || "/", `http://${req.headers.host || `localhost:${port}`}`);
 
   log("[Bridge] incoming request", {
     method: req.method,
@@ -254,9 +254,9 @@ server.on("error", (error) => {
   });
 });
 
-server.listen(port, "127.0.0.1", () => {
+server.listen(port, "localhost", () => {
   log("[Bridge] started", {
-    listenUrl: `http://127.0.0.1:${port}`,
+    listenUrl: `http://localhost:${port}`,
     casparHost,
     casparPort,
     envPath,
