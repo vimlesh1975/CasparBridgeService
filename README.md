@@ -33,18 +33,6 @@ Allowed payload:
 
 Responds with CORS headers so your online page can call the local bridge.
 
-### `GET /health`
-
-Returns the bridge status and current CasparCG target host/port.
-
-The health response also includes:
-
-- `envPath`
-- `logPath`
-- `lastRequestAt`
-- `lastCommand`
-- `lastError`
-
 The bridge writes request and error logs to `bridge.log` beside the EXE.
 
 ## Configuration

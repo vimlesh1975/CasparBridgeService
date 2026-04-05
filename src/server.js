@@ -234,23 +234,6 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  if (req.method === "GET" && url.pathname === "/health") {
-    sendJson(res, 200, {
-      ok: true,
-      service: "caspar-bridge-service",
-      port,
-      casparHost,
-      casparPort,
-      connected: caspar ? caspar.connected : false,
-      envPath,
-      logPath,
-      lastRequestAt,
-      lastCommand,
-      lastError
-    });
-    return;
-  }
-
   if (
     req.method === "POST" &&
     (
